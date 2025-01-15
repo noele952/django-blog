@@ -31,7 +31,9 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
-    os.getenv('APP_HOST', 'localhost'),  # Ensure a fallback in development
+    os.getenv('APP_HOST', 'localhost'),     # Ensure a fallback in development
+    os.getenv('ROUTE_53_A'),
+    os.getenv('ROUTE_53_CNAME'),
 ]
 
 
