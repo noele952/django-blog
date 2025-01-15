@@ -29,10 +29,10 @@ jobs:
           pip install pylint black
 
       - name: Run lint (Pylint)
-        run: pylint your_project_name
+        run: pylint my_site blog
 
       - name: Run formatting (Black)
-        run: black --check your_project_name
+        run: black --check my_site blog
 
   test:
     runs-on: ubuntu-latest
@@ -87,3 +87,4 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           file: ./coverage.xml
+
