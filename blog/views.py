@@ -133,7 +133,7 @@ class PostDetailView(View):
         Returns:
             HttpResponse: The rendered post detail page.
         """
-        post = Post.objects.get(slug=slug)
+        post = Post.objects.get(slug=slug) # pylint: disable=no-member
         context = {
             "post": post,
             "post_tags": post.tag.all(),
@@ -144,7 +144,7 @@ class PostDetailView(View):
 
         return render(request, "blog/post-detail.html", context)
 
-    def post(self, request, slug):
+    def post(self, request, slug): # pylint: disable=no-member
         """
         Handles POST requests to submit a new comment on a post.
 
@@ -220,7 +220,7 @@ class ReadLaterView(View):
             context["posts"] = []
             context["has_posts"] = False
         else:
-            posts = Post.objects.filter(id__in=stored_posts)
+            posts = Post.objects.filter(id__in=stored_posts) # pylint: disable=no-member
             context["posts"] = posts
             context["has_posts"] = True
 

@@ -1,6 +1,3 @@
-from django.db import migrations, models
-import django.db.models.deletion
-
 """
 This module defines the migration for adding the `Comment` model to the `blog`
 app.
@@ -13,6 +10,9 @@ Key additions:
   - `post`: A foreign key linking the comment to a specific `Post` object in
      the `blog` app.
 """
+
+from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):

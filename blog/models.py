@@ -1,7 +1,3 @@
-from django.db import models
-from django.urls import reverse
-from django.core.validators import MinLengthValidator
-
 """
 This module defines the models for the blog application, including `Author`,
 `Tag`, `Post`, and `Comment`. Each model represents an important entity in
@@ -16,6 +12,10 @@ Models:
     - `Comment`: Stores user comments on posts, including user details and
       comment text.
 """
+
+from django.db import models
+from django.urls import reverse
+from django.core.validators import MinLengthValidator
 
 
 class Author(models.Model):

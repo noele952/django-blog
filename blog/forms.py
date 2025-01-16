@@ -29,6 +29,22 @@ class CommentForm(forms.ModelForm):
     labels.
     """
     class Meta:
+        # pylint: disable=too-few-public-methods
+        """
+        Metadata for the CommentForm class.
+
+        This inner class provides configuration options for the form.
+        Specifically, it:
+        - Specifies the associated model as 'Comment', allowing the form to be
+          directly tied to the database model.
+        - Excludes the 'post' field, ensuring that the post association is
+          handled programmatically rather than by user input.
+        - Customizes the labels for form fields, providing user-friendly names
+          for:
+            - 'user_name': Displayed as "Your Name".
+            - 'user_email': Displayed as "Your Email".
+            - 'comment_text': Displayed as "Your Comment".
+        """
         model = Comment
         exclude = ["post"]
         labels = {

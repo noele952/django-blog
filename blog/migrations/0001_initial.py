@@ -1,6 +1,3 @@
-from django.db import migrations, models
-import django.db.models.deletion
-
 """
 Migration module for creating the initial database schema for the blog app.
 
@@ -14,6 +11,9 @@ This migration creates three models:
 It also includes related migration operations to set up the relationships
 and structure of the database.
 """
+
+from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):

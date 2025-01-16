@@ -1,7 +1,3 @@
-import django.core.validators
-from django.db import migrations, models
-import django.db.models.deletion
-
 """
 This module contains a migration for the `blog` app.
 
@@ -19,6 +15,10 @@ Key modifications made in this migration:
 - **Tag Model**:
   1. Shortened the maximum length of `caption` to 20 characters.
 """
+
+import django.core.validators
+from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
