@@ -1,3 +1,7 @@
+from pathlib import Path
+import os
+from dotenv import load_dotenv
+
 """
 Django settings for my_site project.
 
@@ -10,9 +14,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
-from pathlib import Path
-import os
-from dotenv import load_dotenv
 
 if os.getenv('ENV') == 'development':
     load_dotenv()
@@ -95,10 +96,6 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST', ''),
         'PORT': os.getenv('DB_PORT', ''),
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
 }
 
 
