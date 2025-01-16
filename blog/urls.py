@@ -1,6 +1,3 @@
-from django.urls import path
-from . import views
-
 """
 This module contains the URL routing for the 'blog' application in the Django
 project.
@@ -21,6 +18,9 @@ URL patterns:
 Each URL pattern also defines a named URL, which can be used for reverse URL
 resolution in templates and views.
 """
+
+from django.urls import path
+from . import views
 
 
 urlpatterns = [

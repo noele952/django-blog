@@ -1,10 +1,10 @@
-from django.apps import AppConfig
-
 """
 This module defines the application configuration for the 'blog' module
 in the Django project. The configuration specifies default behavior
 and metadata for the app, such as its name and default auto field type.
 """
+
+from django.apps import AppConfig
 
 
 class BlogConfig(AppConfig):

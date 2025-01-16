@@ -1,3 +1,11 @@
+"""
+This module contains views for the 'blog' application in the Django project.
+
+It defines various views related to blog posts, including displaying the
+starting page with recent posts, viewing all posts, detailed views of
+individual posts, and a read-later functionality to store and view posts.
+"""
+
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.views import View
@@ -6,14 +14,6 @@ from django.urls import reverse
 
 from .models import Post
 from .forms import CommentForm
-
-"""
-This module contains views for the 'blog' application in the Django project.
-
-It defines various views related to blog posts, including displaying the
-starting page with recent posts, viewing all posts, detailed views of
-individual posts, and a read-later functionality to store and view posts.
-"""
 
 
 class StartingPageView(ListView):

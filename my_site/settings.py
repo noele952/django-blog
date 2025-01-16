@@ -1,7 +1,3 @@
-from pathlib import Path
-import os
-from dotenv import load_dotenv
-
 """
 Django settings for my_site project.
 
@@ -13,6 +9,10 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
+from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 
 if os.getenv('ENV') == 'development':
