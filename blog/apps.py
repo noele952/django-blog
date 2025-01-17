@@ -23,5 +23,6 @@ class BlogConfig(AppConfig):
         name (str): The name of the application as it appears in project
         settings.
     """
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'blog'
+
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "blog"

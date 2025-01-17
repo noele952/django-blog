@@ -28,6 +28,7 @@ class CommentForm(forms.ModelForm):
     'user_email', and 'comment_text' fields are customized with specific
     labels.
     """
+
     class Meta:
         # pylint: disable=too-few-public-methods
         """
@@ -50,5 +51,5 @@ class CommentForm(forms.ModelForm):
         labels = {
             "user_name": "Your Name",
             "user_email": "Your Email",
-            "comment_text": "Your Comment"
+            "comment_text": "Your Comment",
         }

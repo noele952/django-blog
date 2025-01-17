@@ -26,6 +26,7 @@ class Author(models.Model):
     their email address. It also provides a method to return the full name of
     the author.
     """
+
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     e_mail = models.EmailField()
@@ -51,6 +52,7 @@ class Tag(models.Model):
     The Tag model contains a single field for the caption of the tag and
     provides a method to represent the tag as a string.
     """
+
     caption = models.CharField(max_length=20)
 
     def __str__(self):
@@ -69,6 +71,7 @@ class Post(models.Model):
     (many-to-many) and the `Author` model (foreign key). Additionally,
     a method for generating the absolute URL for a post is provided.
     """
+
     title = models.CharField(max_length=255)
     excerpt = models.CharField(max_length=400)
     image = models.ImageField(upload_to="posts", null=True)
@@ -76,8 +79,9 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, db_index=True)
     content = models.TextField(validators=[MinLengthValidator(10)])
     tag = models.ManyToManyField(Tag, related_name="posts")
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True,
-                               related_name="posts")
+    author = models.ForeignKey(
+        Author, on_delete=models.SET_NULL, null=True, related_name="posts"
+    )
 
     def get_absolute_url(self):
         """
@@ -100,8 +104,8 @@ class Comment(models.Model):
     comment, and a relationship to the `Post` model to associate the comment
     with a specific blog post.
     """
+
     user_name = models.CharField(max_length=100)
     user_email = models.EmailField()
     comment_text = models.TextField(max_length=500)
-    post = models.ForeignKey(Post, on_delete=models.CASCADE,
-                             related_name="comments")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")

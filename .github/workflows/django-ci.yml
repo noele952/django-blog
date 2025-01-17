@@ -34,8 +34,7 @@ jobs:
           pylint my_site blog || true
 
       - name: Run formatting (Black)
-        run: |
-            black --check my_site blog || true
+        run: black .
 
   test:
     runs-on: ubuntu-latest

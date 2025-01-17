@@ -37,46 +37,65 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Author',
+            name="Author",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('first_name', models.CharField(max_length=100)),
-                ('last_name', models.CharField(max_length=100)),
-                ('e_mail', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("first_name", models.CharField(max_length=100)),
+                ("last_name", models.CharField(max_length=100)),
+                ("e_mail", models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.BigAutoField(auto_created=True,
-                                           primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('caption', models.CharField(max_length=100)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("caption", models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.BigAutoField(auto_created=True,
-                                           primary_key=True,
-                                           serialize=False,
-                                           verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('excerpt', models.CharField(max_length=1000)),
-                ('image_name', models.CharField(max_length=100)),
-                ('date', models.DateField()),
-                ('slug', models.SlugField(blank=True, default='')),
-                ('content', models.CharField(max_length=10000)),
-                ('author', models.ForeignKey(
-                    null=True,
-                    on_delete=django.db.models.deletion.CASCADE,
-                    related_name='posts',
-                    to='blog.author')),
-                ('tag', models.ManyToManyField(related_name='posts',
-                                               to='blog.tag')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=255)),
+                ("excerpt", models.CharField(max_length=1000)),
+                ("image_name", models.CharField(max_length=100)),
+                ("date", models.DateField()),
+                ("slug", models.SlugField(blank=True, default="")),
+                ("content", models.CharField(max_length=10000)),
+                (
+                    "author",
+                    models.ForeignKey(
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="posts",
+                        to="blog.author",
+                    ),
+                ),
+                ("tag", models.ManyToManyField(related_name="posts", to="blog.tag")),
             ],
         ),
     ]

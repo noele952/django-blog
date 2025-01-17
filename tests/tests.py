@@ -32,4 +32,5 @@ class BlogTests(TestCase):
         method should begin with 'test_' to ensure it is recognized by the
         testing framework.
     """
+
     pass  # Add your test methods here

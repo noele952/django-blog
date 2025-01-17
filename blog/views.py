@@ -35,6 +35,7 @@ class StartingPageView(ListView):
         get_queryset: Limits the displayed posts to the top 3 most recent
         posts.
     """
+
     template_name = "blog/index.html"
     model = Post
     context_object_name = "posts"
@@ -70,6 +71,7 @@ class PostsView(ListView):
         context_object_name (str): The name used for the all_posts variable in
         the template.
     """
+
     template_name = "blog/all-posts.html"
     model = Post
     ordering = ["-date"]
@@ -133,18 +135,18 @@ class PostDetailView(View):
         Returns:
             HttpResponse: The rendered post detail page.
         """
-        post = Post.objects.get(slug=slug) # pylint: disable=no-member
+        post = Post.objects.get(slug=slug)  # pylint: disable=no-member
         context = {
             "post": post,
             "post_tags": post.tag.all(),
             "comment_form": CommentForm(),
             "comments": post.comments.all().order_by("-id"),
-            "saved_for_later": self.is_stored_post(request, post.id)
+            "saved_for_later": self.is_stored_post(request, post.id),
         }
 
         return render(request, "blog/post-detail.html", context)
 
-    def post(self, request, slug): # pylint: disable=no-member
+    def post(self, request, slug):  # pylint: disable=no-member
         """
         Handles POST requests to submit a new comment on a post.
 
@@ -160,7 +162,7 @@ class PostDetailView(View):
             HttpResponseRedirect: Redirects to the post detail page after
             saving the comment.
         """
-        comment_form = CommentForm(request.POST)
+        comment_form = CommentForm(request.POST)  # pylint: disable=no-member
         post = Post.objects.get(slug=slug)
 
         if comment_form.is_valid():
@@ -168,15 +170,14 @@ class PostDetailView(View):
             comment.post = post
             comment.save()
 
-            return HttpResponseRedirect(reverse("post-detail-page",
-                                                args=[slug]))
+            return HttpResponseRedirect(reverse("post-detail-page", args=[slug]))
 
         context = {
             "post": post,
             "post_tags": post.tag.all(),
             "comment_form": comment_form,
             "comments": post.comments.all().order_by("-id"),
-            "saved_for_later": self.is_stored_post(request, post.id)
+            "saved_for_later": self.is_stored_post(request, post.id),
         }
 
         return render(request, "blog/post-detail.html", context)
@@ -220,7 +221,9 @@ class ReadLaterView(View):
             context["posts"] = []
             context["has_posts"] = False
         else:
-            posts = Post.objects.filter(id__in=stored_posts) # pylint: disable=no-member
+            posts = Post.objects.filter(
+                id__in=stored_posts
+            )  # pylint: disable=no-member
             context["posts"] = posts
             context["has_posts"] = True
 
