@@ -1,2 +1,2 @@
 [MASTER]
-ignore-patterns=blog.migrations/*.py
+ignore-paths=migrations/.*\.py$

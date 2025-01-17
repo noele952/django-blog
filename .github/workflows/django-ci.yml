@@ -29,12 +29,6 @@ jobs:
           pip install -r requirements.txt
           pip install pylint black
 
-      - name: Debug Pylint Config
-        run: |
-          pylint --generate-rcfile
-          pylint my_site blog --rcfile=.pylintrc || true
-    
-
       - name: Run lint (Pylint)
         run: |
           pylint my_site blog || true
