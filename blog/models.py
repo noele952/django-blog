@@ -53,13 +53,13 @@ class Tag(models.Model):
     provides a method to represent the tag as a string.
     """
 
-    caption = models.CharField(max_length=20)
+    caption = models.CharField(max_length=20, default='')
 
     def __str__(self):
         """
         Returns the caption of the tag as a string representation.
         """
-        return self.caption
+        return str(self.caption)
 
 
 class Post(models.Model):
@@ -93,7 +93,7 @@ class Post(models.Model):
         """
         Returns the title of the post as its string representation.
         """
-        return self.title
+        return str(self.title)
 
 
 class Comment(models.Model):

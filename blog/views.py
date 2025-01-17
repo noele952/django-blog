@@ -162,8 +162,8 @@ class PostDetailView(View):
             HttpResponseRedirect: Redirects to the post detail page after
             saving the comment.
         """
-        comment_form = CommentForm(request.POST)  # pylint: disable=no-member
-        post = Post.objects.get(slug=slug)
+        comment_form = CommentForm(request.POST)    # pylint: disable=no-member
+        post = Post.objects.get(slug=slug)          # pylint: disable=no-member
 
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
