@@ -31,7 +31,7 @@ jobs:
 
       - name: Run lint (Pylint)
         run: |
-          pylint --ignore-patterns=migrations/*.py my_site blog || true
+          pylint my_site blog || true
 
       - name: Run formatting (Black)
         run: black .
