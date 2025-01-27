@@ -1,7 +1,12 @@
+/* General Reset */
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   background-color: #e7e7e7;
 }
 
+/* Default Styles (Desktop-first) */
 #main-navigation {
   background-color: #390281;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -202,3 +207,71 @@ main {
 #comments h2 {
   color: #464646;
 }
+
+/* Responsive Design */
+
+/* Medium Screens (768px and smaller) */
+@media (max-width: 768px) {
+  #summary {
+    margin: 4rem auto;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  #summary h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  #summary article {
+    position: static;
+    text-align: center;
+  }
+
+  #summary article img {
+    width: 10rem;
+    height: 10rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #comment-form,
+  #alert,
+  #comments {
+    width: 95%;
+  }
+
+  #read-later button {
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 0.5rem;
+  }
+}
+
+/* Small Screens (480px and smaller) */
+@media (max-width: 480px) {
+  #summary h2 {
+    font-size: 2rem;
+  }
+
+  #summary article img {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  #comment-form,
+  #alert,
+  #comments {
+    padding: 0.5rem;
+  }
+
+  #comments ul {
+    padding: 0.5rem;
+  }
+
+  #read-later button {
+    padding: 0.4rem 1rem;
+  }
+}
+

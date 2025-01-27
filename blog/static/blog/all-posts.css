@@ -1,43 +1,97 @@
+/* General Reset */
 body {
-    background-color: #e7e7e7;
-  }
-  
-  #main-navigation {
-    background-color: #390281;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e7e7e7;
+}
+
+/* Default styles (Desktop-first) */
+#main-navigation {
+  background-color: #390281;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+#all-posts {
+  margin: 7rem auto;
+  width: 90%;
+  max-width: 60rem;
+}
+
+#all-posts h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2e2e2e;
+  margin: 3rem 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1.5rem;
+}
+
+.post img {
+  width: 7rem;
+  height: 7rem;
+}
+
+.post a {
+  height: 22rem;
+  transform-origin: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  background-color: white;
+}
+
+/* Responsive Design for Screens Smaller Than 768px */
+@media (max-width: 768px) {
   #all-posts {
-    margin: 7rem auto;
-    width: 90%;
-    max-width: 60rem;
+    margin: 5rem auto;
+    width: 95%;
   }
-  
+
   #all-posts h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #2e2e2e;
-    margin: 3rem 0;
+    font-size: 1.75rem;
+    margin: 2rem 0;
   }
-  
+
   ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
   }
-  
+
   .post img {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
   }
-  
+
   .post a {
-    height: 22rem;
-    transform-origin: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    background-color: white;
+    height: 18rem;
   }
+}
+
+/* Additional Tweaks for Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  #all-posts h2 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .post img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .post a {
+    height: 14rem;
+  }
+}

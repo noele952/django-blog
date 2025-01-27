@@ -1,39 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
 #main-navigation {
-    background-color: #390281;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  
+  background-color: #390281;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 1rem;
+}
+
+#stored-posts {
+  margin: 6rem auto 2rem auto; /* Adjusted top margin for smaller screens */
+  padding: 1.5rem; /* Reduced padding for better use of screen space */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  width: 90%;
+  max-width: 25rem; /* Slightly smaller max width */
+}
+
+#stored-posts ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#stored-posts li {
+  margin: 1rem 0;
+}
+
+#stored-posts a {
+  display: block;
+  padding: 0.75rem 1rem; /* Reduced padding for smaller screens */
+  width: 100%;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  color: #1b1b1b;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#stored-posts a:hover,
+#stored-posts a:active {
+  background-color: #ececec; /* Subtle hover effect for mobile */
+  transform: scale(1.02); /* Adds feedback for touch interactions */
+}
+
+/* Tablet view adjustments */
+@media (max-width: 768px) {
   #stored-posts {
-    margin: 8rem auto 3rem auto;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    background-color: white;
-    width: 90%;
-    max-width: 30rem;
+    margin: 4rem auto 1.5rem auto;
+    padding: 1.25rem;
   }
-  
-  #stored-posts ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #stored-posts li {
-    margin: 1rem 0;
-  }
-  
+
   #stored-posts a {
-    display: block;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem; /* Slightly smaller text for compact layout */
+  }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 480px) {
+  #stored-posts {
+    margin: 3rem auto 1rem auto;
     padding: 1rem;
-    width: 100%;
-    text-decoration: none;
-    border: 1px solid #ccc;
-    color: #1b1b1b;
-    font-weight: bold;
+    width: 95%;
   }
-  
-  #stored-posts a:hover,
-  #stored-posts a:active {
-    background-color: #ccc;
+
+  #stored-posts a {
+    font-size: 0.85rem; /* Smaller font for mobile screens */
+    padding: 0.5rem 0.7rem;
   }
+}
+

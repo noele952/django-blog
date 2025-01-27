@@ -1,43 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
 .post {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .post a {
-    text-decoration: none;
-    color: black;
-    transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover,
+.post:active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.post a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.2s ease;
+  padding: 0.75rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.post a:hover,
+.post a:active {
+  transform: scale(1.1);
+  background-color: #390281;
+  color: white;
+  border-radius: 8px;
+}
+
+.post img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.post h3 {
+  margin: 0.25rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.post time {
+  color: #666666;
+  margin: 0.25rem;
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.post:hover time,
+.post:active time {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .post {
+    margin: 0.5rem auto;
     padding: 1rem;
+    width: 90%;
   }
-  
-  .post a:hover,
-  .post a:active {
-    transform: scale(1.1);
-    background-color: #390281;
-    color: white;
-  }
-  
+
   .post img {
-    width: 5rem;
-    height: 5rem;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
   }
-  
+
+  .post a {
+    font-size: 1rem;
+  }
+
   .post h3 {
-    margin: 0.25rem 0;
+    font-size: 1rem;
   }
-  
+
   .post time {
-    color: #666666;
-    margin: 0.25rem;
-    font-style: italic;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
-  
-  .post:hover time,
-  .post:active time {
-    color: white;
+}
+
+@media (max-width: 480px) {
+  .post {
+    padding: 0.75rem;
   }
+
+  .post img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .post a {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .post h3 {
+    font-size: 0.9rem;
+  }
+
+  .post time {
+    font-size: 0.7rem;
+  }
+}
