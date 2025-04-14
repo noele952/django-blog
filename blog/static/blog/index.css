@@ -39,13 +39,14 @@ body {
 #welcome p {
   color: white;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 #latest-posts {
   background-color: white;
   padding: 2rem;
   border-radius: 12px;
-  width: 60rem;
+  width: 90%;
   margin: -6rem auto 2rem auto;
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
 }
@@ -109,7 +110,7 @@ body {
 
   #latest-posts {
     width: 90%;
-    margin: 2rem auto;
+    margin: -2rem auto;
   }
 
   #latest-posts ul {
